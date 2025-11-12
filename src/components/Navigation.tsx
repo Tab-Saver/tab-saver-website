@@ -26,7 +26,8 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <img src={yellowFolderIcon} alt="Tab Saver" className="h-10 w-10" />
-            <span className="text-gray-900">Tab Saver</span>
+            <span className="text-gray-900 hidden sm:inline">Tab Saver: Save Time & Tabs</span>
+            <span className="text-gray-900 sm:hidden">Tab Saver</span>
           </Link>
 
           {/* Desktop Navigation */}

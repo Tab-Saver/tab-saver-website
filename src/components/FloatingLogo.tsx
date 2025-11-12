@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import Logo from './Logo';
+import yellowFolderIcon from 'figma:asset/yellow-folder-bookmark-icon.png';
 
 export default function FloatingLogo() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -18,7 +18,7 @@ export default function FloatingLogo() {
 
   return (
     <motion.div
-      className="fixed top-20 right-10 w-16 h-16 opacity-20 pointer-events-none z-10"
+      className="fixed top-10 right-10 w-20 h-20 pointer-events-none z-10"
       animate={{
         x: position.x,
         y: position.y,
@@ -30,7 +30,7 @@ export default function FloatingLogo() {
         rotate: { duration: 20, repeat: Infinity, ease: 'linear' },
       }}
     >
-      <Logo className="w-full h-full" />
+      <img src={yellowFolderIcon} alt="Tab Saver" className="w-full h-full" />
     </motion.div>
   );
 }

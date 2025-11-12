@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import { Download, Github, Sparkles, FolderOpen, Tag, Brain, ArrowRight, Globe, Zap, FileText, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Logo from '../Logo';
 import AnimatedIcons from '../AnimatedIcons';
 import sessionsImage from 'figma:asset/202d73787a5b0bfb476a70f5025efe0c712d5330.png';
 import folderCheckImage from 'figma:asset/f1ec68c60386c2233b158dd66c457ddd1a541110.png';
+import tabSaverScreenshot from 'figma:asset/tab-saver-screenshot.png';
 
 export default function HomePage() {
   const [scrolled, setScrolled] = useState(false);
@@ -153,7 +153,11 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl p-16 shadow-2xl flex items-center justify-center relative overflow-hidden">
-                  <Logo className="w-64 h-64 relative z-10" />
+                  <img 
+                    src={tabSaverScreenshot} 
+                    alt="Tab Saver Interface" 
+                    className="w-full h-auto rounded-2xl relative z-10 shadow-xl"
+                  />
                   
                   {/* Animated floating icons */}
                   <AnimatedIcons />
@@ -354,28 +358,6 @@ export default function HomePage() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Success Visual */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-12 text-center text-white relative overflow-hidden"
-          >
-            <div className="relative z-10">
-              <div className="flex justify-center mb-6">
-                <img src={folderCheckImage} alt="Success" className="w-32 h-32" />
-              </div>
-              <h2 className="mb-4">Your Tabs, Perfectly Saved</h2>
-              <p className="max-w-2xl mx-auto opacity-90">
-                Never lose your work again. Tab Saver keeps all your sessions safe, organized, and ready to restore whenever you need them.
-              </p>
             </div>
           </motion.div>
         </div>

@@ -3,7 +3,7 @@ import { Download, Github, Sparkles, FolderOpen, Tag, Brain, ArrowRight, Globe, 
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import AnimatedIcons from '../AnimatedIcons';
-import sessionsImage from 'figma:asset/202d73787a5b0bfb476a70f5025efe0c712d5330.png';
+import savedSessionsImage from 'figma:asset/saved-sessions-screenshot.png';
 import folderCheckImage from 'figma:asset/f1ec68c60386c2233b158dd66c457ddd1a541110.png';
 import tabSaverScreenshot from 'figma:asset/tab-saver-screenshot.png';
 
@@ -284,8 +284,8 @@ export default function HomePage() {
               className="relative"
             >
               <img
-                src={sessionsImage}
-                alt="Tab Saver Sessions Interface"
+                src={savedSessionsImage}
+                alt="Tab Saver Saved Sessions Interface"
                 className="w-full h-auto rounded-2xl shadow-2xl border border-gray-200"
               />
             </motion.div>

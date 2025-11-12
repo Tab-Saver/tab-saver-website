@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import Logo from './Logo';
+import yellowFolderIcon from 'figma:asset/yellow-folder-bookmark-icon.png';
 
 export default function Navigation() {
   const location = useLocation();
@@ -25,7 +25,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Logo className="h-10 w-10" />
+            <img src={yellowFolderIcon} alt="Tab Saver" className="h-10 w-10" />
             <span className="text-gray-900">Tab Saver</span>
           </Link>
 

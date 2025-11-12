@@ -1,18 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navigation from './components/Navigation';
 import HomePage from './components/pages/HomePage';
 import ReviewsPage from './components/pages/ReviewsPage';
 import HowToUsePage from './components/pages/HowToUsePage';
 import PrivacyPolicyPage from './components/pages/PrivacyPolicyPage';
 import ContactPage from './components/pages/ContactPage';
-import FloatingLogo from './components/FloatingLogo';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
         <Navigation />
-        <FloatingLogo />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/reviews" element={<ReviewsPage />} />

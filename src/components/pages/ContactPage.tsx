@@ -159,7 +159,7 @@ export default function ContactPage() {
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg transition-shadow"
+              className="w-full bg-blue-600 text-white py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 hover:shadow-lg transition-all"
             >
               <Send className="w-5 h-5" />
               Send Message

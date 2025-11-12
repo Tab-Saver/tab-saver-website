@@ -203,7 +203,7 @@ export default function ReviewsPage() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 text-white">
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-3xl p-8 text-white">
             <h2 className="mb-4">Join Our Happy Users!</h2>
             <p className="mb-6 opacity-90">
               Download Tab Saver and experience better tab management today.
@@ -216,7 +216,7 @@ export default function ReviewsPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg"
+                className="bg-white text-green-600 px-8 py-3 rounded-lg"
               >
                 Download Extension
               </motion.button>

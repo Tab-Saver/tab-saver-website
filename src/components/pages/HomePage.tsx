@@ -286,7 +286,7 @@ export default function HomePage() {
               <img
                 src={sessionsImage}
                 alt="Tab Saver Sessions Interface"
-                className="rounded-2xl shadow-2xl border border-gray-200"
+                className="w-full h-auto rounded-2xl shadow-2xl border border-gray-200"
               />
             </motion.div>
           </div>

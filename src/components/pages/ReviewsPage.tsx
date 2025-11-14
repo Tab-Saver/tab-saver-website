@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Star, MessageSquare, Calendar } from 'lucide-react';
-import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar';
 
 export default function ReviewsPage() {
   const reviews = [
@@ -52,24 +51,6 @@ export default function ReviewsPage() {
       helpful: true,
     },
     {
-      name: 'Sarah Chen',
-      initial: 'S',
-      color: 'bg-blue-600',
-      rating: 5,
-      date: 'Nov 10, 2025',
-      comment: 'This extension has changed how I do research! Being able to save all my tabs with notes and come back to them later is a game changer. The AI summaries are surprisingly accurate.',
-      helpful: true,
-    },
-    {
-      name: 'Alex Martinez',
-      initial: 'A',
-      color: 'bg-green-600',
-      rating: 5,
-      date: 'Nov 9, 2025',
-      comment: 'Love the tagging system! Makes it so easy to organize my work projects vs personal browsing. Simple, fast, and exactly what I needed.',
-      helpful: true,
-    },
-    {
       name: 'Osman Mahdi',
       initial: 'O',
       color: 'bg-indigo-600',
@@ -77,7 +58,6 @@ export default function ReviewsPage() {
       date: 'Nov 13, 2025',
       comment: 'Great extension! Really helps me keep track of all my research tabs.',
       helpful: true,
-      avatar: undefined, // Add profile picture path here, e.g., 'figma:asset/osman-mahdi.png'
     },
     {
       name: 'Developer',
@@ -97,7 +77,6 @@ export default function ReviewsPage() {
       date: 'Nov 13, 2025',
       comment: 'Exactly what I needed for managing multiple projects. The organization features are fantastic!',
       helpful: true,
-      avatar: undefined, // Add profile picture path here, e.g., 'figma:asset/pola-soliman.png'
     },
     {
       name: 'Developer',
@@ -117,7 +96,6 @@ export default function ReviewsPage() {
       date: 'Nov 13, 2025',
       comment: 'Simple and effective. Makes saving and organizing tabs so much easier.',
       helpful: true,
-      avatar: undefined, // Add profile picture path here, e.g., 'figma:asset/youssef-mikhail.png'
     },
     {
       name: 'Developer',
@@ -172,26 +150,25 @@ export default function ReviewsPage() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={`bg-white rounded-2xl p-6 shadow-lg ${
-                review.isReply ? 'ml-12 bg-gray-50 border-l-4 border-purple-500' : ''
+                review.isReply ? 'ml-12 bg-gray-50 border-l-4 border-green-500' : ''
               }`}
             >
               {review.isReply && review.replyTo && (
                 <div className="text-gray-500 mb-2 flex items-center gap-2">
-                  <span className="text-purple-600">↳</span>
+                  <span className="text-green-600">↳</span>
                   <span>Reply to {review.replyTo}</span>
                 </div>
               )}
               
               <div className="flex items-start gap-4">
                 {/* Avatar */}
-                <Avatar className="w-12 h-12 flex-shrink-0">
-                  {review.avatar && (
-                    <AvatarImage src={review.avatar} alt={review.name} />
-                  )}
-                  <AvatarFallback className={`${review.color} text-white`}>
-                    {review.initial}
-                  </AvatarFallback>
-                </Avatar>
+                {!review.isReply && (
+                  <div
+                    className={`w-12 h-12 ${review.color} rounded-full flex items-center justify-center text-white flex-shrink-0`}
+                  >
+                    <span>{review.initial}</span>
+                  </div>
+                )}
 
                 {/* Content */}
                 <div className="flex-1">

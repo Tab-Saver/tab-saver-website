@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Star, MessageSquare, Calendar } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar';
 
 export default function ReviewsPage() {
   const reviews = [
@@ -76,6 +77,17 @@ export default function ReviewsPage() {
       date: 'Nov 13, 2025',
       comment: 'Great extension! Really helps me keep track of all my research tabs.',
       helpful: true,
+      avatar: undefined, // Add profile picture path here, e.g., 'figma:asset/osman-mahdi.png'
+    },
+    {
+      name: 'Developer',
+      initial: 'D',
+      color: 'bg-purple-600',
+      badge: 'Developer',
+      date: 'Nov 13, 2025',
+      comment: 'Thank you for the feedback! We\'re glad Tab Saver is helping with your research.',
+      isReply: true,
+      replyTo: 'Osman Mahdi',
     },
     {
       name: 'Pola Soliman',
@@ -85,6 +97,17 @@ export default function ReviewsPage() {
       date: 'Nov 13, 2025',
       comment: 'Exactly what I needed for managing multiple projects. The organization features are fantastic!',
       helpful: true,
+      avatar: undefined, // Add profile picture path here, e.g., 'figma:asset/pola-soliman.png'
+    },
+    {
+      name: 'Developer',
+      initial: 'D',
+      color: 'bg-purple-600',
+      badge: 'Developer',
+      date: 'Nov 13, 2025',
+      comment: 'We\'re thrilled to hear the organization features are working well for you! Keep an eye out for more updates.',
+      isReply: true,
+      replyTo: 'Pola Soliman',
     },
     {
       name: 'Youssef Mikhail',
@@ -94,6 +117,17 @@ export default function ReviewsPage() {
       date: 'Nov 13, 2025',
       comment: 'Simple and effective. Makes saving and organizing tabs so much easier.',
       helpful: true,
+      avatar: undefined, // Add profile picture path here, e.g., 'figma:asset/youssef-mikhail.png'
+    },
+    {
+      name: 'Developer',
+      initial: 'D',
+      color: 'bg-purple-600',
+      badge: 'Developer',
+      date: 'Nov 13, 2025',
+      comment: 'Thanks for the review! Simplicity and effectiveness are exactly what we aimed for.',
+      isReply: true,
+      replyTo: 'Youssef Mikhail',
     },
   ];
 
@@ -150,11 +184,14 @@ export default function ReviewsPage() {
               
               <div className="flex items-start gap-4">
                 {/* Avatar */}
-                <div
-                  className={`w-12 h-12 ${review.color} rounded-full flex items-center justify-center text-white flex-shrink-0`}
-                >
-                  <span>{review.initial}</span>
-                </div>
+                <Avatar className="w-12 h-12 flex-shrink-0">
+                  {review.avatar && (
+                    <AvatarImage src={review.avatar} alt={review.name} />
+                  )}
+                  <AvatarFallback className={`${review.color} text-white`}>
+                    {review.initial}
+                  </AvatarFallback>
+                </Avatar>
 
                 {/* Content */}
                 <div className="flex-1">

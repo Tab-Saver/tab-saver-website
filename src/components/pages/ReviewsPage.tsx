@@ -162,13 +162,13 @@ export default function ReviewsPage() {
               
               <div className="flex items-start gap-4">
                 {/* Avatar */}
-                {!review.isReply && (
+                {!review.isReply ? (
                   <div
                     className={`w-12 h-12 ${review.color} rounded-full flex items-center justify-center text-white flex-shrink-0`}
                   >
                     <span>{review.initial}</span>
                   </div>
-                )}
+                ) : null}
 
                 {/* Content */}
                 <div className="flex-1">

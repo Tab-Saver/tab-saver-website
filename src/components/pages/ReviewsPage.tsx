@@ -68,6 +68,33 @@ export default function ReviewsPage() {
       comment: 'Love the tagging system! Makes it so easy to organize my work projects vs personal browsing. Simple, fast, and exactly what I needed.',
       helpful: true,
     },
+    {
+      name: 'Osman Mahdi',
+      initial: 'O',
+      color: 'bg-indigo-600',
+      rating: 5,
+      date: 'Nov 13, 2025',
+      comment: 'Great extension! Really helps me keep track of all my research tabs.',
+      helpful: true,
+    },
+    {
+      name: 'Pola Soliman',
+      initial: 'P',
+      color: 'bg-pink-600',
+      rating: 5,
+      date: 'Nov 13, 2025',
+      comment: 'Exactly what I needed for managing multiple projects. The organization features are fantastic!',
+      helpful: true,
+    },
+    {
+      name: 'Youssef Mikhail',
+      initial: 'Y',
+      color: 'bg-cyan-600',
+      rating: 5,
+      date: 'Nov 13, 2025',
+      comment: 'Simple and effective. Makes saving and organizing tabs so much easier.',
+      helpful: true,
+    },
   ];
 
   return (
